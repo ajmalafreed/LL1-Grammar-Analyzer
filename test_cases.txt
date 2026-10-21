@@ -1,0 +1,47 @@
+LL(1) GRAMMAR ANALYZER — SAMPLE TEST CASES
+
+TEST CASE 1: ARITHMETIC GRAMMAR
+E -> T E'
+E' -> + T E' | epsilon
+T -> F T'
+T' -> * F T' | epsilon
+F -> ( E ) | id
+
+Valid input: id + id * id
+Expected result: ACCEPTED
+
+TEST CASE 2: INVALID ARITHMETIC INPUT
+Grammar: Arithmetic grammar from Test Case 1
+Input: id + * id
+Expected result: REJECTED
+
+TEST CASE 3: CONFLICT DETECTION
+S -> a A | a B
+A -> b
+B -> c
+
+Expected result: Conflict at M[S, a]; grammar is NOT LL(1).
+
+TEST CASE 4: LEFT FACTORING
+Original grammar:
+S -> a A | a B
+A -> b
+B -> c
+
+Expected transformed grammar:
+S -> a S'
+S' -> A | B
+A -> b
+B -> c
+
+Expected result: No parsing-table conflicts after factoring.
+
+TEST CASE 5: EPSILON PRODUCTIONS
+S -> A B
+A -> a | epsilon
+B -> b | epsilon
+
+Test inputs: a b; a; b; epsilon
+Expected result: ACCEPTED for all four inputs.
+
+Note: These are representative sample tests. Actual results depend on the grammar entered and the analyzer's supported input conventions.
