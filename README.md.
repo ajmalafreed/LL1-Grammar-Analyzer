@@ -1,0 +1,48 @@
+# LL(1) Grammar Analyzer
+
+## Project Overview
+
+A C++17 console application developed for the Compiler Design Lab to analyze context-free grammars and perform LL(1) predictive parsing.
+
+## Features
+
+* FIRST and FOLLOW set computation
+* LL(1) parsing table generation
+* Parsing-table conflict detection
+* Predictive parsing with stack trace
+* Grammar comparison
+* Automatic left factoring for supported common-prefix cases
+* Direct left-recursion checking
+* Grammar relationship view
+* Export analysis output to a text report
+
+## Technologies
+
+* C++17
+* GCC compiler
+* Visual Studio Code
+
+## Compile
+
+```bash
+g++ -std=c++17 -Wall -Wextra -pedantic main.cpp -o main.exe
+```
+
+## Run on Windows PowerShell
+
+```powershell
+.\main.exe
+```
+
+## Grammar Input Format
+
+* Use `->` between the left-hand side and right-hand side.
+* Use `|` to separate alternatives.
+* Separate grammar symbols with spaces.
+* Use `epsilon` for an empty production.
+
+## Team Members
+
+* S. Ajmal Afreed — 24BCE0754
+* S. Likhil Kumar Reddy — 24BCE0452
+* Karanam Kiran Naidu — 24BAI0202
